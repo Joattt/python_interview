@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<table>
+    <tr>
+        <th>Название</th>
+        <th>Поставщик</th>
+        <th>Цена</th>
+        <th>Валюта</th>
+        <th>Дата поступления</th>
+    </tr>
+    {% for object in object_list %}
+        <tr>
+            <td>{{ object.title }}</td>
+            <td>{{ object.supplier }}</td>
+            <td>{{ object.price }}</td>
+            <td>{{ object.unit }}</td>
+            <td>{{ object.date_receipt }}</td>
+        </tr>
+    {% endfor %}
+</table>
+<form action="{% url 'products_add' %}">
+  <button type="submit">Добавить товар</button>
+</form>
+{% endblock %}

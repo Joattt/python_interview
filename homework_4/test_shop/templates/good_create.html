@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+Добавление нового товара:
+<form action="{% url 'products_add' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% include "form.html" %}
+    <button type="submit">Добавить</button>
+</form>
+{% endblock %}
